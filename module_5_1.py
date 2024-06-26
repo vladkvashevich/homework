@@ -3,15 +3,9 @@ class House:
         self.name = name
         self.number_of_floors = number_of_floors
     def go_to (self, new_floor):
-        a = 1
-        if new_floor >= 1:
-            while a <= new_floor:
-                if new_floor > self.number_of_floors or new_floor < 1:
-                    print (f"В доме '{self.name}' такого этажа не существует")
-                    return
-                else:
-                    print (f"Дом '{self.name}', этаж номер {a}")
-                    a += 1
+        if 1 <= new_floor <= self.number_of_floors:
+            for floor in range(1, new_floor + 1):
+                print (f"Дом '{self.name}', этаж номер {floor}")
         else:
             print (f"В доме '{self.name}' такого этажа не существует")
 h1 = House('ЖК Горский', 18)
