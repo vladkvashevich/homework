@@ -2,6 +2,8 @@ class House:
     def __init__ (self,name,number_of_floors):
         self.name = name
         self.number_of_floors = number_of_floors
+        self.say_info()
+    def say_info(self):
         print(f"Название: '{self.name}', количество этажей: {self.number_of_floors}")
     def __eq__(self, other):
         isinstance(other, int)
@@ -31,19 +33,19 @@ class House:
         isinstance(value, int)
         isinstance(value, House)
         self.number_of_floors = self.number_of_floors + value
-        print (f"Название: '{self.name}', количество этажей: {self.number_of_floors}")
+        self.say_info()
         return self
     def __radd__(self, value):
         isinstance(value, int)
         isinstance(value, House)
         self.number_of_floors = self.number_of_floors + value
-        print(f"Название: '{self.name}', количество этажей: {self.number_of_floors}")
+        self.say_info()
         return self
     def  __iadd__(self, value):
         isinstance(value, int)
         isinstance(value, House)
         self.number_of_floors = self.number_of_floors + value
-        print(f"Название: '{self.name}', количество этажей: {self.number_of_floors}")
+        self.say_info()
         return self
     def __str__(self):
         return f"{self.name}"
